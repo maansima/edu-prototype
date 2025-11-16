@@ -23,8 +23,8 @@ export const InstructorBlobs: React.FC<InstructorBlobsProps> = ({ week }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">
+    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-6">
         Week Quality Indicators
       </h3>
       
@@ -33,19 +33,19 @@ export const InstructorBlobs: React.FC<InstructorBlobsProps> = ({ week }) => {
         <div className="flex flex-col items-center space-y-4">
           <div className="relative w-24 h-24">
             <div
-              className={`absolute inset-0 blob-gradient-1 rounded-full blur-xl transition-all duration-500 animate-pulse-slow ${getBlobOpacity(
+              className={`absolute inset-0 blob-gradient-1 rounded-full blur-xl transition-all duration-500 ${getBlobOpacity(
                 clarityScore
               )}`}
             ></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-2xl font-bold text-gray-900 dark:text-white z-10">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-50 z-10">
                 {clarityScore}
               </span>
             </div>
           </div>
           <div className="text-center">
-            <p className="text-sm font-medium text-gray-900 dark:text-white">Clarity</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-medium text-slate-900 dark:text-slate-50">Clarity</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               {clarityScore === 3 ? 'Excellent' : clarityScore === 2 ? 'Good' : 'Needs work'}
             </p>
           </div>
@@ -55,20 +55,20 @@ export const InstructorBlobs: React.FC<InstructorBlobsProps> = ({ week }) => {
         <div className="flex flex-col items-center space-y-4">
           <div className="relative w-24 h-24">
             <div
-              className={`absolute inset-0 blob-gradient-2 rounded-full blur-xl transition-all duration-500 animate-pulse-slow ${getBlobOpacity(
+              className={`absolute inset-0 blob-gradient-2 rounded-full blur-xl transition-all duration-500 ${getBlobOpacity(
                 engagementScore
               )}`}
               style={{ animationDelay: '0.5s' }}
             ></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-2xl font-bold text-gray-900 dark:text-white z-10">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-50 z-10">
                 {engagementScore}
               </span>
             </div>
           </div>
           <div className="text-center">
-            <p className="text-sm font-medium text-gray-900 dark:text-white">Engagement</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-medium text-slate-900 dark:text-slate-50">Engagement</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               {engagementScore === 3 ? 'High' : engagementScore === 2 ? 'Moderate' : 'Low'}
             </p>
           </div>
@@ -78,20 +78,20 @@ export const InstructorBlobs: React.FC<InstructorBlobsProps> = ({ week }) => {
         <div className="flex flex-col items-center space-y-4">
           <div className="relative w-24 h-24">
             <div
-              className={`absolute inset-0 blob-gradient-3 rounded-full blur-xl transition-all duration-500 animate-pulse-slow ${getBlobOpacity(
+              className={`absolute inset-0 blob-gradient-3 rounded-full blur-xl transition-all duration-500 ${getBlobOpacity(
                 continuityScore
               )}`}
               style={{ animationDelay: '1s' }}
             ></div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-2xl font-bold text-gray-900 dark:text-white z-10">
+              <span className="text-2xl font-bold text-slate-900 dark:text-slate-50 z-10">
                 {continuityScore}
               </span>
             </div>
           </div>
           <div className="text-center">
-            <p className="text-sm font-medium text-gray-900 dark:text-white">Continuity</p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-medium text-slate-900 dark:text-slate-50">Continuity</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               {continuityScore === 3 ? 'Strong' : continuityScore === 2 ? 'Building' : 'Starting'}
             </p>
           </div>

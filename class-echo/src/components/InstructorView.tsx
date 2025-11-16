@@ -61,30 +61,30 @@ export const InstructorView: React.FC<InstructorViewProps> = ({
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="space-y-6">
       {/* Upload & Context Section */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-4">
           Upload & Context
         </h3>
         
         <div className="space-y-4">
           {/* Audio Recording */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Audio Recording
             </label>
             {uploadedRecording ? (
-              <div className="flex items-center justify-between p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div>
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">
+                  <p className="text-sm font-medium text-slate-900 dark:text-slate-50">
                     {uploadedRecording.filename}
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     Duration: {uploadedRecording.duration}
                   </p>
                 </div>
-                <label className="cursor-pointer text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                <label className="cursor-pointer text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
                   Replace
                   <input
                     type="file"
@@ -95,8 +95,8 @@ export const InstructorView: React.FC<InstructorViewProps> = ({
                 </label>
               </div>
             ) : (
-              <label className="flex items-center justify-center w-full p-4 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-blue-500 dark:hover:border-blue-400 transition-colors">
-                <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+              <label className="flex items-center justify-center w-full p-4 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl cursor-pointer hover:border-slate-400 dark:hover:border-slate-500 transition-colors">
+                <div className="flex items-center space-x-2 text-slate-600 dark:text-slate-400">
                   <Upload className="w-5 h-5" />
                   <span className="text-sm">Upload audio recording</span>
                 </div>
@@ -112,20 +112,20 @@ export const InstructorView: React.FC<InstructorViewProps> = ({
 
           {/* Slides */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Slides
             </label>
             {uploadedSlides ? (
-              <div className="flex items-center justify-between p-3 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+              <div className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
                 <div>
-                  <p className="text-sm font-medium text-gray-900 dark:text-white">
+                  <p className="text-sm font-medium text-slate-900 dark:text-slate-50">
                     {uploadedSlides.filename}
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
                     {uploadedSlides.pageCount} pages
                   </p>
                 </div>
-                <label className="cursor-pointer text-sm text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300">
+                <label className="cursor-pointer text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300">
                   Replace
                   <input
                     type="file"
@@ -136,8 +136,8 @@ export const InstructorView: React.FC<InstructorViewProps> = ({
                 </label>
               </div>
             ) : (
-              <label className="flex items-center justify-center w-full p-4 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-green-500 dark:hover:border-green-400 transition-colors">
-                <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+              <label className="flex items-center justify-center w-full p-4 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl cursor-pointer hover:border-slate-400 dark:hover:border-slate-500 transition-colors">
+                <div className="flex items-center space-x-2 text-slate-600 dark:text-slate-400">
                   <Upload className="w-5 h-5" />
                   <span className="text-sm">Upload slides (PDF, PPT)</span>
                 </div>
@@ -153,36 +153,36 @@ export const InstructorView: React.FC<InstructorViewProps> = ({
 
           {/* Readings */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
               Readings
             </label>
             <div className="space-y-2">
               {readings.map((reading) => (
                 <div
                   key={reading.id}
-                  className="flex items-center justify-between p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg border border-purple-200 dark:border-purple-800"
+                  className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700"
                 >
                   <div>
-                    <p className="text-sm font-medium text-gray-900 dark:text-white">
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-50">
                       {reading.title}
                     </p>
                     <a
                       href={reading.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-purple-600 dark:text-purple-400 hover:underline"
+                      className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline"
                     >
                       {reading.url}
                     </a>
                   </div>
-                  <span className="text-xs px-2 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded">
+                  <span className="text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-full">
                     {reading.type}
                   </span>
                 </div>
               ))}
               <button
                 onClick={handleAddReading}
-                className="w-full p-3 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-600 dark:text-gray-400 hover:border-purple-500 dark:hover:border-purple-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                className="w-full p-3 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-xl text-sm text-slate-600 dark:text-slate-400 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
               >
                 + Add reading
               </button>

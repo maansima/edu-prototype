@@ -22,9 +22,9 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="flex items-center space-x-2 overflow-x-auto pb-2">
+    <div className="bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-4 py-6">
+        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
           {weeks.map((week) => {
             const status = getWeekStatus(week);
             const isCurrent = week.id === currentWeek;
@@ -35,12 +35,12 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
                 onClick={() => onWeekChange(week.id)}
                 disabled={status === 'future'}
                 className={`
-                  flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200
+                  flex-shrink-0 px-3 py-1.5 rounded-full text-sm border cursor-pointer transition-all duration-200
                   ${isCurrent
-                    ? 'bg-blue-500 text-white shadow-lg scale-105'
+                    ? 'bg-slate-900 text-white border-slate-900 dark:bg-slate-50 dark:text-slate-900 dark:border-slate-50'
                     : status === 'past'
-                    ? 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                    : 'bg-gray-50 dark:bg-gray-900 text-gray-400 dark:text-gray-600 cursor-not-allowed'
+                    ? 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-700 dark:hover:bg-slate-800'
+                    : 'bg-slate-100 text-slate-400 border-slate-100 cursor-not-allowed dark:bg-slate-900 dark:text-slate-600 dark:border-slate-800'
                   }
                 `}
               >
@@ -51,11 +51,11 @@ export const WeekTimeline: React.FC<WeekTimelineProps> = ({
         </div>
         
         {/* Week title and date */}
-        <div className="mt-4">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <div className="mt-6">
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-slate-50">
             {weeks.find(w => w.id === currentWeek)?.title}
           </h2>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             {new Date(weeks.find(w => w.id === currentWeek)?.date || '').toLocaleDateString('en-US', {
               month: 'long',
               day: 'numeric',

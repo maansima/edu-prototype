@@ -34,8 +34,8 @@ export const StudentBlobs: React.FC<StudentBlobsProps> = ({ week }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">
+    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-6">
         Your Mastery Level
       </h3>
 
@@ -58,10 +58,10 @@ export const StudentBlobs: React.FC<StudentBlobsProps> = ({ week }) => {
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-900 dark:text-white">
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-50">
               Not yet solid
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Keep working on the concepts
             </p>
           </div>
@@ -85,10 +85,10 @@ export const StudentBlobs: React.FC<StudentBlobsProps> = ({ week }) => {
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-900 dark:text-white">
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-50">
               Getting there
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Good progress, refine your understanding
             </p>
           </div>
@@ -112,10 +112,10 @@ export const StudentBlobs: React.FC<StudentBlobsProps> = ({ week }) => {
             </div>
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-900 dark:text-white">
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-50">
               Confident
             </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Great job! You understand this well
             </p>
           </div>
@@ -124,8 +124,8 @@ export const StudentBlobs: React.FC<StudentBlobsProps> = ({ week }) => {
 
       {/* Progress indicator */}
       {week.studentProgress.answers.length > 0 && (
-        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+        <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+          <p className="text-xs text-slate-500 dark:text-slate-400 text-center">
             {week.studentProgress.answers.length} of {week.quizPrompts.length} questions answered
           </p>
         </div>
