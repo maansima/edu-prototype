@@ -9,11 +9,11 @@ export const WeekSummaryCard: React.FC<WeekSummaryCardProps> = ({ week }) => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed':
-        return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400';
+        return 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400';
       case 'in-progress':
-        return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400';
+        return 'bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400';
       default:
-        return 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-400';
+        return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400';
     }
   };
 
@@ -29,13 +29,13 @@ export const WeekSummaryCard: React.FC<WeekSummaryCardProps> = ({ week }) => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
+    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-4 md:p-6 space-y-3 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
       <div className="flex items-start justify-between mb-4">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50">
           Week Summary
         </h3>
         <span
-          className={`text-xs px-3 py-1 rounded-full font-medium ${getStatusColor(
+          className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(
             week.studentProgress.quizStatus
           )}`}
         >
@@ -43,21 +43,18 @@ export const WeekSummaryCard: React.FC<WeekSummaryCardProps> = ({ week }) => {
         </span>
       </div>
 
-      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+      <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
         {week.studentSummary}
       </p>
 
       {week.keyConcepts.length > 0 && (
         <div>
-          <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
-            Key concepts this week
+          <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-50 mb-2">
+            Key concepts
           </h4>
-          <ul className="space-y-2">
+          <ul className="list-disc list-inside space-y-1 text-sm text-slate-700 dark:text-slate-300">
             {week.keyConcepts.map((concept, index) => (
-              <li key={index} className="flex items-start space-x-2">
-                <span className="flex-shrink-0 w-1.5 h-1.5 bg-blue-500 rounded-full mt-2"></span>
-                <span className="text-sm text-gray-700 dark:text-gray-300">{concept}</span>
-              </li>
+              <li key={index}>{concept}</li>
             ))}
           </ul>
         </div>

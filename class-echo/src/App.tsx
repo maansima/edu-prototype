@@ -164,7 +164,7 @@ function App() {
   const currentWeekData = weeks.find((w) => w.id === currentWeek) || weeks[0];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 transition-colors duration-300">
       <Header
         viewMode={viewMode}
         onViewModeChange={setViewMode}
@@ -178,15 +178,17 @@ function App() {
         onWeekChange={setCurrentWeek}
       />
 
-      {viewMode === 'instructor' ? (
-        <InstructorView week={currentWeekData} onWeekUpdate={handleWeekUpdate} />
-      ) : (
-        <StudentView
-          week={currentWeekData}
-          chatMessages={chatMessages[currentWeek] || []}
-          onSendMessage={handleSendMessage}
-        />
-      )}
+      <main className="max-w-6xl mx-auto px-4 py-8">
+        {viewMode === 'instructor' ? (
+          <InstructorView week={currentWeekData} onWeekUpdate={handleWeekUpdate} />
+        ) : (
+          <StudentView
+            week={currentWeekData}
+            chatMessages={chatMessages[currentWeek] || []}
+            onSendMessage={handleSendMessage}
+          />
+        )}
+      </main>
     </div>
   );
 }

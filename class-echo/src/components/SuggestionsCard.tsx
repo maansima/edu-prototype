@@ -14,78 +14,76 @@ export const SuggestionsCard: React.FC<SuggestionsCardProps> = ({
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'article':
-        return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400';
+        return 'bg-indigo-50 text-indigo-700 dark:bg-indigo-900/20 dark:text-indigo-400';
       case 'podcast':
-        return 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400';
+        return 'bg-purple-50 text-purple-700 dark:bg-purple-900/20 dark:text-purple-400';
       case 'case':
-        return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400';
+        return 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400';
       case 'video':
-        return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400';
+        return 'bg-orange-50 text-orange-700 dark:bg-orange-900/20 dark:text-orange-400';
       default:
-        return 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-400';
+        return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-400';
     }
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
-      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-        Keep your class fresh
+    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
+      <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-50 mb-2">
+        Suggestions for next week
       </h3>
-      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-        Suggested resources to enhance next week's content
+      <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+        AI-curated resources to enhance your content
       </p>
 
       {suggestions.length > 0 ? (
-        <div className="space-y-4">
+        <div className="space-y-3">
           {suggestions.map((suggestion) => (
             <div
               key={suggestion.id}
-              className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg border border-gray-200 dark:border-gray-600 hover:border-blue-300 dark:hover:border-blue-600 transition-colors"
+              className="flex items-start justify-between gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 md:p-4 dark:bg-slate-800 dark:border-slate-700 transition-colors"
             >
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
-                      {suggestion.title}
-                    </h4>
-                    <span
-                      className={`text-xs px-2 py-0.5 rounded-full ${getTypeColor(
-                        suggestion.type
-                      )}`}
-                    >
-                      {suggestion.type}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">
-                    {suggestion.description}
-                  </p>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-50">
+                    {suggestion.title}
+                  </h4>
+                  <span
+                    className={`text-xs px-3 py-1 rounded-full font-medium ${getTypeColor(
+                      suggestion.type
+                    )}`}
+                  >
+                    {suggestion.type}
+                  </span>
                 </div>
-                <button
-                  onClick={() => onToggleSuggestion(suggestion.id)}
-                  className={`ml-4 flex-shrink-0 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    suggestion.addedToPlan
-                      ? 'bg-green-500 text-white hover:bg-green-600'
-                      : 'bg-blue-500 text-white hover:bg-blue-600'
-                  }`}
-                >
-                  {suggestion.addedToPlan ? (
-                    <div className="flex items-center space-x-1">
-                      <Check className="w-4 h-4" />
-                      <span>Added</span>
-                    </div>
-                  ) : (
-                    <div className="flex items-center space-x-1">
-                      <Plus className="w-4 h-4" />
-                      <span>Add to plan</span>
-                    </div>
-                  )}
-                </button>
+                <p className="text-sm text-slate-600 dark:text-slate-400">
+                  {suggestion.description}
+                </p>
               </div>
+              <button
+                onClick={() => onToggleSuggestion(suggestion.id)}
+                className={`flex-shrink-0 text-xs px-3 py-1 rounded-full font-medium transition-all duration-200 ${
+                  suggestion.addedToPlan
+                    ? 'bg-emerald-500 text-white hover:bg-emerald-600'
+                    : 'bg-indigo-600 text-white hover:bg-indigo-700'
+                }`}
+              >
+                {suggestion.addedToPlan ? (
+                  <div className="flex items-center gap-1">
+                    <Check className="w-3 h-3" />
+                    <span>Added</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-1">
+                    <Plus className="w-3 h-3" />
+                    <span>Add</span>
+                  </div>
+                )}
+              </button>
             </div>
           ))}
         </div>
       ) : (
-        <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+        <p className="text-sm text-slate-500 dark:text-slate-400 italic">
           No suggestions available yet
         </p>
       )}

@@ -7,33 +7,33 @@ interface AnalyticsCardsProps {
 
 export const AnalyticsCards: React.FC<AnalyticsCardsProps> = ({ analytics }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid gap-4 md:grid-cols-3">
       {/* Engagement Overview */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-4 md:p-6 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
+        <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">
           Engagement Overview
         </h3>
         <div className="space-y-4">
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Total Questions</p>
-            <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mb-1">Total Questions</p>
+            <p className="text-2xl font-semibold text-slate-900 dark:text-slate-50">
               {analytics.totalQuestions}
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Participation Rate</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400 mb-1">Participation Rate</p>
             <div className="flex items-end space-x-2">
-              <p className="text-3xl font-bold text-green-600 dark:text-green-400">
+              <p className="text-2xl font-semibold text-slate-900 dark:text-slate-50">
                 {analytics.participationRate}%
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                of students spoke
+              <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                spoke
               </p>
             </div>
           </div>
           <div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Attendance</p>
-            <p className="text-2xl font-bold text-gray-900 dark:text-white">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mb-1">Attendance</p>
+            <p className="text-xl font-semibold text-slate-900 dark:text-slate-50">
               {analytics.attendance}/{analytics.totalStudents}
             </p>
           </div>
@@ -41,20 +41,20 @@ export const AnalyticsCards: React.FC<AnalyticsCardsProps> = ({ analytics }) => 
       </div>
 
       {/* Key Themes */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-          Key Themes / Takeaways
+      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-4 md:p-6 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
+        <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">
+          Key Themes
         </h3>
         <ul className="space-y-3">
           {analytics.keyThemes.length > 0 ? (
             analytics.keyThemes.map((theme, index) => (
               <li key={index} className="flex items-start space-x-2">
-                <span className="flex-shrink-0 w-1.5 h-1.5 bg-purple-500 rounded-full mt-2"></span>
-                <span className="text-sm text-gray-700 dark:text-gray-300">{theme}</span>
+                <span className="flex-shrink-0 w-1.5 h-1.5 bg-slate-400 dark:bg-slate-500 rounded-full mt-2"></span>
+                <span className="text-sm text-slate-700 dark:text-slate-300">{theme}</span>
               </li>
             ))
           ) : (
-            <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+            <p className="text-sm text-slate-500 dark:text-slate-400 italic">
               No lecture content yet
             </p>
           )}
@@ -62,28 +62,28 @@ export const AnalyticsCards: React.FC<AnalyticsCardsProps> = ({ analytics }) => 
       </div>
 
       {/* Participation Details */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-colors duration-300">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+      <div className="rounded-2xl border border-slate-200 bg-white shadow-sm p-4 md:p-6 dark:bg-slate-900 dark:border-slate-700 transition-colors duration-300">
+        <h3 className="text-sm font-medium text-slate-500 dark:text-slate-400 mb-4">
           Participation Details
         </h3>
-        <div className="space-y-3">
+        <div className="space-y-2">
           {analytics.participationDetails.length > 0 ? (
             analytics.participationDetails.map((detail, index) => (
               <div
                 key={index}
-                className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg"
+                className="flex items-center justify-between p-2 bg-slate-50 dark:bg-slate-800 rounded-lg"
               >
-                <span className="text-sm font-medium text-gray-900 dark:text-white">
+                <span className="text-sm font-medium text-slate-900 dark:text-slate-50">
                   {detail.studentName}
                 </span>
-                <div className="flex items-center space-x-3 text-xs text-gray-600 dark:text-gray-400">
+                <div className="flex items-center space-x-3 text-xs text-slate-600 dark:text-slate-400">
                   <span>{detail.questionsAsked} Q</span>
                   <span>{detail.timesSpoken} spoke</span>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+            <p className="text-sm text-slate-500 dark:text-slate-400 italic">
               No participation data yet
             </p>
           )}
