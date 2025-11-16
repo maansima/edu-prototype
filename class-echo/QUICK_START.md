@@ -1,5 +1,18 @@
 # Class Echo - Quick Start Guide
 
+## Prerequisites
+
+**Node.js Version:** This project requires Node.js 14.0.0 or higher.
+
+Check your Node.js version:
+```bash
+node --version
+```
+
+If you need to upgrade Node.js:
+- **Using nvm (recommended)**: `nvm install 22` or `nvm use` (reads .nvmrc)
+- **Direct download**: [nodejs.org](https://nodejs.org/)
+
 ## Installation & Running
 
 ```bash

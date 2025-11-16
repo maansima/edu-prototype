@@ -38,8 +38,17 @@ Class Echo is the digital companion to a physical recording device in classrooms
 
 ### Prerequisites
 
-- Node.js 16.x or higher
+- **Node.js 14.0.0 or higher** (Node.js 18+ recommended)
 - npm or yarn
+
+**Check your Node.js version:**
+```bash
+node --version
+```
+
+**If you need to upgrade Node.js:**
+- Using nvm: `nvm install 22` or `nvm use` (reads .nvmrc file)
+- Direct download: [nodejs.org](https://nodejs.org/)
 
 ### Installation
 
